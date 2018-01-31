@@ -16,6 +16,4 @@ This project has been developed on **Linux Ubuntu** with **Python 3.5**. It is u
 The following Python packages will be installed:
 * [flask](http://flask.pocoo.org) (version?)
 * [graphene](http://graphene-python.org) (version?)
-* [nose2](http://nose2.readthedocs.io) (version?)
-* [requests](http://docs.python-requests.org) (version?)
 * [sqlalchemy](https://www.sqlalchemy.org) (version?)
