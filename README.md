@@ -14,8 +14,8 @@ This project has been developed on **Linux Ubuntu** with **Python 3.5**. It is u
 `$ pip3 install -r requirements.txt`
 
 The following Python packages will be installed:
-* [flask](http://flask.pocoo.org) (0.12.2)
-* [graphene](http://graphene-python.org) (0.7.0)
-* [nose2](http://nose2.readthedocs.io) (0.7.0)
-* [requests](http://docs.python-requests.org) (2.9.1)
-* [sqlalchemy](https://www.sqlalchemy.org) (1.1.14)
+* [flask](http://flask.pocoo.org) (version?)
+* [graphene](http://graphene-python.org) (version?)
+* [nose2](http://nose2.readthedocs.io) (version?)
+* [requests](http://docs.python-requests.org) (version?)
+* [sqlalchemy](https://www.sqlalchemy.org) (version?)

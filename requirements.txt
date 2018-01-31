@@ -1,0 +1,5 @@
+flask==0.11.1
+graphene==2.0.0
+graphene-sqlalchemy==2.0.0
+nose2==0.7.2
+sqlalchemy==1.1.14
