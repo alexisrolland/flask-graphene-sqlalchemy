@@ -1,8 +1,8 @@
-from .database import Base
+from base import Base
 from sqlalchemy import Column, ForeignKey, Integer, String
 
 
-class People(Base):
+class ModelPeople(Base):
     """People model."""
 
     __tablename__ = 'people'

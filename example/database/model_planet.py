@@ -1,9 +1,9 @@
-from .database import Base
+from base import Base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
 
-class Planet(Base):
+class ModelPlanet(Base):
     """Planet model."""
 
     __tablename__ = 'planet'
@@ -22,4 +22,4 @@ class Planet(Base):
     edited = Column('edited', String)
     url = Column('url', String)
 
-    peoples = relationship('People', backref='planet')
+    peoples = relationship('ModelPeople', backref='planet')
