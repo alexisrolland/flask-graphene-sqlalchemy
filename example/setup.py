@@ -21,8 +21,6 @@ if __name__ == '__main__':
     with open('database/data/planet.json', 'r') as file:
         data = literal_eval(file.read())
         for record in data:
-            # Extract planet id from url
-            record['id'] = record['url'][record['url'].index('https://swapi.co/api/planets/')+29:-1]
             planet = model_planet.Planet(**record)
             database.db_session.add(planet)
         database.db_session.commit()
@@ -31,9 +29,6 @@ if __name__ == '__main__':
     with open('database/data/people.json', 'r') as file:
         data = literal_eval(file.read())
         for record in data:
-            # Extract people and planet id from urls
-            record['id'] = record['url'][record['url'].index('https://swapi.co/api/people/')+28:-1]
-            record['homeworld'] = record['homeworld'][record['homeworld'].index('https://swapi.co/api/planets/')+29:-1]
             planet = model_people.People(**record)
             database.db_session.add(planet)
         database.db_session.commit()
