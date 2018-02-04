@@ -6,7 +6,7 @@ The [Github Wiki](https://github.com/alexisrolland/flask-graphene-sqlalchemy/wik
 # References
 * [Graphene-SQLAlchemy](http://docs.graphene-python.org/projects/sqlalchemy/en/latest)
 * [Flask-Graphene-SQLAlchemy](https://github.com/Getmrahul/Flask-Graphene-SQLAlchemy)
-* [Starwars API](https://swapi.co)
+* [Star Wars API](https://swapi.co)
 
 # Requirements
 This project has been developed on **Linux Ubuntu** with **Python 3.5**. It is using the following third party packages. To install them, open a terminal window, change directory to the project folder and execute the following command:

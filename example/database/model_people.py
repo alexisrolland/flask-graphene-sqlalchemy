@@ -16,7 +16,7 @@ class ModelPeople(Base):
     eye_color = Column('eye_color', String)
     birth_year = Column('birth_year', String)
     gender = Column('gender', String)
-    homeworld = Column('homeworld', Integer, ForeignKey('planet.id'))
+    planet_id = Column('planet_id', Integer, ForeignKey('planet.id'))
     created = Column('created', String)
     edited = Column('edited', String)
     url = Column('url', String)

@@ -14,4 +14,11 @@ class Query(graphene.ObjectType):
     planetList = SQLAlchemyConnectionField(schema_planet.Planet)
 
 
-schema = graphene.Schema(query=Query)
+class Mutation(graphene.ObjectType):
+    createPerson = schema_people.CreatePerson.Field()
+    updatePerson = schema_people.UpdatePerson.Field()
+    createPlanet = schema_planet.CreatePlanet.Field()
+    updatePlanet = schema_planet.UpdatePlanet.Field()
+
+
+schema = graphene.Schema(query=Query, mutation=Mutation)
