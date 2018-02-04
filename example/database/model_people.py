@@ -1,4 +1,4 @@
-from base import Base
+from .base import Base
 from sqlalchemy import Column, ForeignKey, Integer, String
 
 
@@ -9,8 +9,8 @@ class ModelPeople(Base):
 
     id = Column('id', Integer, primary_key=True)
     name = Column('name', String)
-    height = Column('height', Integer)
-    mass = Column('mass', Integer)
+    height = Column('height', String)
+    mass = Column('mass', String)
     hair_color = Column('hair_color', String)
     skin_color = Column('skin_color', String)
     eye_color = Column('eye_color', String)

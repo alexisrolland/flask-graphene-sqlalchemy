@@ -1,7 +1,7 @@
 from ast import literal_eval
-from model_people import ModelPeople
-from model_planet import ModelPlanet
-import base
+from database.model_people import ModelPeople
+from database.model_planet import ModelPlanet
+from database import base
 import logging
 import sys
 
@@ -18,7 +18,7 @@ if __name__ == '__main__':
     base.Base.metadata.create_all(base.engine)
 
     log.info('Insert Planet data in database')
-    with open('data/planet.json', 'r') as file:
+    with open('database/data/planet.json', 'r') as file:
         data = literal_eval(file.read())
         for record in data:
             planet = ModelPlanet(**record)
@@ -26,7 +26,7 @@ if __name__ == '__main__':
         base.db_session.commit()
 
     log.info('Insert People data in database')
-    with open('data/people.json', 'r') as file:
+    with open('database/data/people.json', 'r') as file:
         data = literal_eval(file.read())
         for record in data:
             planet = ModelPeople(**record)
