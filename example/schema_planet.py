@@ -7,7 +7,7 @@ import utils
 
 
 class Planet(SQLAlchemyObjectType):
-    """Planet."""
+    """Planet node."""
 
     class Meta:
         model = ModelPlanet
@@ -16,7 +16,7 @@ class Planet(SQLAlchemyObjectType):
 
 class CreatePlanetInput(graphene.InputObjectType):
     """Arguments to create a planet."""
-    name = graphene.String(required=True)
+    name = graphene.String(required=True, description="Some test descriptions.")
     rotation_period = graphene.String(default_value="unknown")
     orbital_period = graphene.String(default_value="unknown")
     diameter = graphene.String(default_value="unknown")
@@ -30,13 +30,12 @@ class CreatePlanetInput(graphene.InputObjectType):
 
 class CreatePlanet(graphene.Mutation):
     """Create a planet."""
-    planet = graphene.Field(lambda: Planet)
+    planet = graphene.Field(lambda: Planet, description="Planet created by this mutation.")
 
     class Arguments:
         input = CreatePlanetInput(required=True)
 
     def mutate(self, info, input):
-        """Create a planet."""
         data = utils.input_to_dictionary(input)
         data['created'] = datetime.utcnow()
         data['edited'] = datetime.utcnow()
@@ -65,13 +64,12 @@ class UpdatePlanetInput(graphene.InputObjectType):
 
 class UpdatePlanet(graphene.Mutation):
     """Update a planet."""
-    planet = graphene.Field(lambda: Planet)
+    planet = graphene.Field(lambda: Planet, description="Planet updated by this mutation.")
 
     class Arguments:
         input = UpdatePlanetInput(required=True)
 
     def mutate(self, info, input):
-        """Update a planet."""
         data = utils.input_to_dictionary(input)
         data['edited'] = datetime.utcnow()
 

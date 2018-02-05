@@ -7,7 +7,7 @@ import utils
 
 
 class People(SQLAlchemyObjectType):
-    """People."""
+    """People node."""
 
     class Meta:
         model = ModelPeople
@@ -30,13 +30,12 @@ class CreatePersonInput(graphene.InputObjectType):
 
 class CreatePerson(graphene.Mutation):
     """Create a person."""
-    person = graphene.Field(lambda: People)
+    person = graphene.Field(lambda: People, description="Person created by this mutation.")
 
     class Arguments:
         input = CreatePersonInput(required=True)
 
     def mutate(self, info, input):
-        """Create a person."""
         data = utils.input_to_dictionary(input)
         data['created'] = datetime.utcnow()
         data['edited'] = datetime.utcnow()
@@ -65,13 +64,12 @@ class UpdatePersonInput(graphene.InputObjectType):
 
 class UpdatePerson(graphene.Mutation):
     """Update a person."""
-    person = graphene.Field(lambda: People)
+    person = graphene.Field(lambda: People, description="Person updated by this mutation.")
 
     class Arguments:
         input = UpdatePersonInput(required=True)
 
     def mutate(self, info, input):
-        """Update a person."""
         data = utils.input_to_dictionary(input)
         data['edited'] = datetime.utcnow()
 
