@@ -1,5 +1,5 @@
 # Flask-Graphene-SQLAlchemy
-The purpose of this repository is to provide a project template to build a **GraphQL API in Python**. Its content has been largely inspired by the references below but code has been modified and enriched to provide a more scalable architecture.
+The purpose of this repository is to provide a project template to build a **GraphQL API in Python**. Its content has been largely inspired by the references below but code has been modified and enriched to provide a more complete API and a more scalable architecture.
 
 The [Github Wiki](https://github.com/alexisrolland/flask-graphene-sqlalchemy/wiki) provides detailed design intentions in a step by step tutorial.
 
