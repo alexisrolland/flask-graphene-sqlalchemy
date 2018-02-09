@@ -16,16 +16,16 @@ class Planet(SQLAlchemyObjectType):
 
 class CreatePlanetInput(graphene.InputObjectType):
     """Arguments to create a planet."""
-    name = graphene.String(required=True, description="Some test descriptions.")
-    rotation_period = graphene.String(default_value="unknown")
-    orbital_period = graphene.String(default_value="unknown")
-    diameter = graphene.String(default_value="unknown")
-    climate = graphene.String(default_value="unknown")
-    gravity = graphene.String(default_value="unknown")
-    terrain = graphene.String(default_value="unknown")
-    surface_water = graphene.String(default_value="unknown")
-    population = graphene.String(default_value="unknown")
-    url = graphene.String(default_value="unknown")
+    name = graphene.String(required=True, description="Name of the planet to be created.")
+    rotation_period = graphene.String(default_value="unknown", description="Rotation period of the planet to be created.")
+    orbital_period = graphene.String(default_value="unknown", description="Orbital period of the planet to be created.")
+    diameter = graphene.String(default_value="unknown", description="Diameter of the planet to be created.")
+    climate = graphene.String(default_value="unknown", description="Climate period of the planet to be created.")
+    gravity = graphene.String(default_value="unknown", description="Gravity of the planet to be created.")
+    terrain = graphene.String(default_value="unknown", description="Terrain of the planet to be created.")
+    surface_water = graphene.String(default_value="unknown", description="Surface water of the planet to be created.")
+    population = graphene.String(default_value="unknown", description="Population of the planet to be created.")
+    url = graphene.String(default_value="unknown", description="URL of the planet in the Star Wars API.")
 
 
 class CreatePlanet(graphene.Mutation):
@@ -49,17 +49,17 @@ class CreatePlanet(graphene.Mutation):
 
 class UpdatePlanetInput(graphene.InputObjectType):
     """Arguments to update a planet."""
-    id = graphene.ID(required=True)
-    name = graphene.String()
-    rotation_period = graphene.String()
-    orbital_period = graphene.String()
-    diameter = graphene.String()
-    climate = graphene.String()
-    gravity = graphene.String()
-    terrain = graphene.String()
-    surface_water = graphene.String()
-    population = graphene.String()
-    url = graphene.String()
+    id = graphene.ID(required=True, description="Global Id of the planet to be updated.")
+    name = graphene.String(description="New value for the name of the planet to be updated.")
+    rotation_period = graphene.String(description="New value for the rotation period of the planet to be updated.")
+    orbital_period = graphene.String(description="New value for the orbital period of the planet to be updated.")
+    diameter = graphene.String(description="New value for the diameter of the planet to be updated.")
+    climate = graphene.String(description="New value for the climate of the planet to be updated.")
+    gravity = graphene.String(description="New value for the gravity of the planet to be updated.")
+    terrain = graphene.String(description="New value for the terrain of the planet to be updated.")
+    surface_water = graphene.String(description="New value for the surface water of the planet to be updated.")
+    population = graphene.String(description="New value for the population of the planet to be updated.")
+    url = graphene.String(description="New value for the Star Wars API URL of the planet to be updated.")
 
 
 class UpdatePlanet(graphene.Mutation):
