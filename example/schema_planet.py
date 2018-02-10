@@ -6,15 +6,7 @@ import graphene
 import utils
 
 
-class Planet(SQLAlchemyObjectType):
-    """Planet node."""
-
-    class Meta:
-        model = ModelPlanet
-        interfaces = (graphene.relay.Node,)
-
-
-# Create a generic class to define planet attributes for both create and update mutations
+# Create a generic class to mutualize description of planet attributes for both queries and mutations
 class PlanetAttribute:
     name = graphene.String(required=True, description="Name of the planet.")
     rotation_period = graphene.String(default_value="unknown", description="Rotation period of the planet.")
@@ -28,8 +20,17 @@ class PlanetAttribute:
     url = graphene.String(default_value="unknown", description="URL of the planet in the Star Wars API.")
 
 
+class Planet(SQLAlchemyObjectType, PlanetAttribute):
+    """Planet node."""
+
+    class Meta:
+        model = ModelPlanet
+        interfaces = (graphene.relay.Node,)
+
+
 class CreatePlanetInput(graphene.InputObjectType, PlanetAttribute):
     """Arguments to create a planet."""
+    pass
 
 
 class CreatePlanet(graphene.Mutation):

@@ -6,15 +6,7 @@ import graphene
 import utils
 
 
-class People(SQLAlchemyObjectType):
-    """People node."""
-
-    class Meta:
-        model = ModelPeople
-        interfaces = (graphene.relay.Node,)
-
-
-# Create a generic class to define people attributes for both create and update mutations
+# Create a generic class to mutualize description of people attributes for both queries and mutations
 class PeopleAttribute:
     name = graphene.String(required=True, description="Name of the person.")
     height = graphene.String(default_value="unknown", description="Height of the person.")
@@ -28,8 +20,17 @@ class PeopleAttribute:
     url = graphene.String(default_value="unknown", description="URL of the person in the Star Wars API.")
 
 
+class People(SQLAlchemyObjectType, PeopleAttribute):
+    """People node."""
+
+    class Meta:
+        model = ModelPeople
+        interfaces = (graphene.relay.Node,)
+
+
 class CreatePersonInput(graphene.InputObjectType, PeopleAttribute):
     """Arguments to create a person."""
+    pass
 
 
 class CreatePerson(graphene.Mutation):
