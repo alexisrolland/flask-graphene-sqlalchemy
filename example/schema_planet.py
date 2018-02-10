@@ -14,18 +14,22 @@ class Planet(SQLAlchemyObjectType):
         interfaces = (graphene.relay.Node,)
 
 
-class CreatePlanetInput(graphene.InputObjectType):
-    """Arguments to create a planet."""
-    name = graphene.String(required=True, description="Name of the planet to be created.")
-    rotation_period = graphene.String(default_value="unknown", description="Rotation period of the planet to be created.")
-    orbital_period = graphene.String(default_value="unknown", description="Orbital period of the planet to be created.")
-    diameter = graphene.String(default_value="unknown", description="Diameter of the planet to be created.")
-    climate = graphene.String(default_value="unknown", description="Climate period of the planet to be created.")
-    gravity = graphene.String(default_value="unknown", description="Gravity of the planet to be created.")
-    terrain = graphene.String(default_value="unknown", description="Terrain of the planet to be created.")
-    surface_water = graphene.String(default_value="unknown", description="Surface water of the planet to be created.")
-    population = graphene.String(default_value="unknown", description="Population of the planet to be created.")
+# Create a generic class to define planet attributes for both create and update mutations
+class PlanetAttribute:
+    name = graphene.String(required=True, description="Name of the planet.")
+    rotation_period = graphene.String(default_value="unknown", description="Rotation period of the planet.")
+    orbital_period = graphene.String(default_value="unknown", description="Orbital period of the planet.")
+    diameter = graphene.String(default_value="unknown", description="Diameter of the planet.")
+    climate = graphene.String(default_value="unknown", description="Climate period of the planet.")
+    gravity = graphene.String(default_value="unknown", description="Gravity of the planet.")
+    terrain = graphene.String(default_value="unknown", description="Terrain of the planet.")
+    surface_water = graphene.String(default_value="unknown", description="Surface water of the planet.")
+    population = graphene.String(default_value="unknown", description="Population of the planet.")
     url = graphene.String(default_value="unknown", description="URL of the planet in the Star Wars API.")
+
+
+class CreatePlanetInput(graphene.InputObjectType, PlanetAttribute):
+    """Arguments to create a planet."""
 
 
 class CreatePlanet(graphene.Mutation):
@@ -47,19 +51,9 @@ class CreatePlanet(graphene.Mutation):
         return CreatePlanet(planet=planet)
 
 
-class UpdatePlanetInput(graphene.InputObjectType):
+class UpdatePlanetInput(graphene.InputObjectType, PlanetAttribute):
     """Arguments to update a planet."""
-    id = graphene.ID(required=True, description="Global Id of the planet to be updated.")
-    name = graphene.String(description="New value for the name of the planet to be updated.")
-    rotation_period = graphene.String(description="New value for the rotation period of the planet to be updated.")
-    orbital_period = graphene.String(description="New value for the orbital period of the planet to be updated.")
-    diameter = graphene.String(description="New value for the diameter of the planet to be updated.")
-    climate = graphene.String(description="New value for the climate of the planet to be updated.")
-    gravity = graphene.String(description="New value for the gravity of the planet to be updated.")
-    terrain = graphene.String(description="New value for the terrain of the planet to be updated.")
-    surface_water = graphene.String(description="New value for the surface water of the planet to be updated.")
-    population = graphene.String(description="New value for the population of the planet to be updated.")
-    url = graphene.String(description="New value for the Star Wars API URL of the planet to be updated.")
+    id = graphene.ID(required=True, description="Global Id of the planet.")
 
 
 class UpdatePlanet(graphene.Mutation):
