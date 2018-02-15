@@ -20,7 +20,7 @@ class PeopleAttribute:
     url = graphene.String(default_value="unknown", description="URL of the person in the Star Wars API.")
 
 
-class People(SQLAlchemyObjectType, PeopleAttribute):
+class People(SQLAlchemyObjectType):
     """People node."""
 
     class Meta:

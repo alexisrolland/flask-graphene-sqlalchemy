@@ -20,7 +20,7 @@ class PlanetAttribute:
     url = graphene.String(default_value="unknown", description="URL of the planet in the Star Wars API.")
 
 
-class Planet(SQLAlchemyObjectType, PlanetAttribute):
+class Planet(SQLAlchemyObjectType):
     """Planet node."""
 
     class Meta:
