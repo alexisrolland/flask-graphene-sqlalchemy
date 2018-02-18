@@ -1,0 +1,73 @@
+# Python CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
+      - image: circleci/python:3.6.1
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/postgres:9.4
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "requirements.txt" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run:
+          name: Create Virtual Environment
+          command: |
+            python3 -m venv gql
+
+      - run:
+          name: Install Dependencies
+          command: |
+            . gql/bin/activate
+            pip3 install --upgrade pip
+            pip3 install -r requirements.txt
+
+      - save_cache:
+          paths:
+            - ./gql
+          key: v1-dependencies-{{ checksum "requirements.txt" }}
+
+      - run:
+          name: Setup Instance
+          command: |
+            . gql/bin/activate
+            cd example
+            python3 setup.py
+
+      - run:
+          name: Start API
+          command: |
+            . gql/bin/activate
+            cd example
+            python3 api.py
+          background: true
+
+      - run:
+          name: Run Tests
+          command: |
+            . gql/bin/activate
+            nose2 --plugin nose2.plugins.junitxml --junit-xml -v
+
+      - store_artifacts:
+          path: test/junit/test-results.xml
+          destination: test-results
+
+      - store_test_results:
+          path: test

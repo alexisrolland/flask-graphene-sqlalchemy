@@ -8,19 +8,19 @@ import utils
 
 # Create a generic class to mutualize description of people attributes for both queries and mutations
 class PeopleAttribute:
-    name = graphene.String(required=True, description="Name of the person.")
-    height = graphene.String(default_value="unknown", description="Height of the person.")
-    mass = graphene.String(default_value="unknown", description="Mass of the person.")
-    hair_color = graphene.String(default_value="unknown", description="Hair color of the person.")
-    skin_color = graphene.String(default_value="unknown", description="Skin color of the person.")
-    eye_color = graphene.String(default_value="unknown", description="Eye color of the person.")
-    birth_year = graphene.String(default_value="unknown", description="Birth year of the person.")
-    gender = graphene.String(default_value="unknown", description="Gender of the person.")
-    planet_id = graphene.ID(default_value="unknown", description="Global Id of the planet from which the person comes from.")
-    url = graphene.String(default_value="unknown", description="URL of the person in the Star Wars API.")
+    name = graphene.String(description="Name of the person.")
+    height = graphene.String(description="Height of the person.")
+    mass = graphene.String(description="Mass of the person.")
+    hair_color = graphene.String(description="Hair color of the person.")
+    skin_color = graphene.String(description="Skin color of the person.")
+    eye_color = graphene.String(description="Eye color of the person.")
+    birth_year = graphene.String(description="Birth year of the person.")
+    gender = graphene.String(description="Gender of the person.")
+    planet_id = graphene.ID(description="Global Id of the planet from which the person comes from.")
+    url = graphene.String(description="URL of the person in the Star Wars API.")
 
 
-class People(SQLAlchemyObjectType, PeopleAttribute):
+class People(SQLAlchemyObjectType):
     """People node."""
 
     class Meta:
