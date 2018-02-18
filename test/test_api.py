@@ -10,7 +10,7 @@ class TestApi(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         """Set up function called when class is consructed."""
-        self.base_url = 'http://127.0.0.1:5000/graphql'
+        self.base_url = 'http://localhost:5000/graphql'
         self.headers = {'content-type': 'application/json'}
 
     def test_query_people(self):
