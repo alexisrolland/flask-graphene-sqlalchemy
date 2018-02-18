@@ -6,7 +6,7 @@ def input_to_dictionary(input):
     dictionary = {}
     for key in input:
         # Convert GraphQL global id to database id
-        if key[-2:] == 'id':
+        if key[-2:] == 'id' and input[key] != 'unknown':
             input[key] = from_global_id(input[key])[1]
         dictionary[key] = input[key]
     return dictionary
