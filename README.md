@@ -15,8 +15,14 @@ This project has been developed on **Linux Ubuntu** with **Python 3.5**. It is u
 `$ pip3 install -r requirements.txt`
 
 The following Python packages will be installed:
-* [sqlalchemy](https://www.sqlalchemy.org) (1.1.14)
-* [graphene](http://graphene-python.org) (2.0.0)
-* [graphene-sqlalchemy](https://pypi.python.org/pypi/graphene-sqlalchemy/2.0.0) (2.0.0)
 * [flask](http://flask.pocoo.org) (0.11.1)
 * [flask-graphql](https://pypi.python.org/pypi/Flask-GraphQL) (1.4.1)
+* [graphene](http://graphene-python.org) (2.0.0)
+* [graphene-sqlalchemy](https://pypi.python.org/pypi/graphene-sqlalchemy/2.0.0) (2.0.0)
+* [nose2](http://nose2.readthedocs.io/en/latest/) (0.7.4)
+* [sqlalchemy](https://www.sqlalchemy.org) (1.1.14)
+
+# Run Test Cases
+To execute all test cases, change directory to the project root folder and execute the following command:
+
+$ nose2 -v

@@ -1,0 +1,26 @@
+<testsuite errors="0" failures="0" name="nose2-junit" skipped="0" tests="8" time="0.081">
+  <testcase classname="test_api.TestApi" name="test_create_person" time="0.010996">
+    <system-out />
+  </testcase>
+  <testcase classname="test_api.TestApi" name="test_create_planet" time="0.010328">
+    <system-out />
+  </testcase>
+  <testcase classname="test_api.TestApi" name="test_query_people" time="0.004189">
+    <system-out />
+  </testcase>
+  <testcase classname="test_api.TestApi" name="test_query_people_list" time="0.011321">
+    <system-out />
+  </testcase>
+  <testcase classname="test_api.TestApi" name="test_query_planet" time="0.006149">
+    <system-out />
+  </testcase>
+  <testcase classname="test_api.TestApi" name="test_query_planet_list" time="0.011553">
+    <system-out />
+  </testcase>
+  <testcase classname="test_api.TestApi" name="test_update_person" time="0.013298">
+    <system-out />
+  </testcase>
+  <testcase classname="test_api.TestApi" name="test_update_planet" time="0.012527">
+    <system-out />
+  </testcase>
+</testsuite>
