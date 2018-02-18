@@ -2,6 +2,7 @@ from database.base import db_session
 from flask import Flask
 from flask_graphql import GraphQLView
 from schema import schema
+import socket
 
 app = Flask(__name__)
 app.add_url_rule(
@@ -15,4 +16,4 @@ def shutdown_session(exception=None):
 
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=5000, threaded=True)  # debug=True
+    app.run(host=socket.gethostname(), port=5000, threaded=True)  # debug=True

@@ -2,6 +2,7 @@
 """Unit test for api module GraphQL queries."""
 import requests
 import unittest
+import socket
 
 
 class TestApi(unittest.TestCase):
@@ -10,7 +11,7 @@ class TestApi(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         """Set up function called when class is consructed."""
-        self.base_url = 'http://localhost:5000/graphql'
+        self.base_url = 'http://{}:5000/graphql'.format(socket.gethostname())
         self.headers = {'content-type': 'application/json'}
 
     def test_query_people(self):
