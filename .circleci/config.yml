@@ -55,8 +55,7 @@ jobs:
           name: Start API
           command: |
             . gql/bin/activate
-            cd example
-            python3 api.py
+            python3 example/api.py
           background: true
 
       - run:
