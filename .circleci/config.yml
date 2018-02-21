@@ -63,6 +63,7 @@ jobs:
           name: Run Tests
           command: |
             . gql/bin/activate
+            sleep 10
             nose2 --plugin nose2.plugins.junitxml --junit-xml -v
 
       - store_artifacts:
