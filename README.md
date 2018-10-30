@@ -15,7 +15,7 @@ This project has been developed on **Linux Ubuntu** with **Python 3.5**. It is u
 `$ pip3 install -r requirements.txt`
 
 The following Python packages will be installed:
-* [flask](http://flask.pocoo.org) (0.11.1)
+* [flask](http://flask.pocoo.org) (0.12.3)
 * [flask-graphql](https://pypi.python.org/pypi/Flask-GraphQL) (1.4.1)
 * [graphene](http://graphene-python.org) (2.0.0)
 * [graphene-sqlalchemy](https://pypi.python.org/pypi/graphene-sqlalchemy/2.0.0) (2.0.0)
