@@ -20,7 +20,7 @@ The following Python packages will be installed:
 * [graphene](http://graphene-python.org) (2.0.0)
 * [graphene-sqlalchemy](https://pypi.python.org/pypi/graphene-sqlalchemy/2.0.0) (2.0.0)
 * [nose2](http://nose2.readthedocs.io/en/latest/) (0.7.4) - Used for running tests
-* [requests](http://docs.python-requests.org/en/master/) (2.18.4) - Used for running tests
+* [requests](http://docs.python-requests.org/en/master/) (2.20.0) - Used for running tests
 * [sqlalchemy](https://www.sqlalchemy.org) (1.1.14)
 
 # Run Test Cases
