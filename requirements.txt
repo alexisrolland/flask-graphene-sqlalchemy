@@ -4,4 +4,4 @@ graphene==2.0.0
 graphene-sqlalchemy==2.0.0
 nose2==0.7.4
 requests==2.20.0
-sqlalchemy==1.1.14
+sqlalchemy==1.3.0
