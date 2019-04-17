@@ -24,7 +24,7 @@ The following Python packages will be installed:
 * [graphene-sqlalchemy](https://pypi.python.org/pypi/graphene-sqlalchemy/2.0.0) (2.0.0)
 * [nose2](http://nose2.readthedocs.io/en/latest/) (0.7.4) - Used for running tests
 * [requests](http://docs.python-requests.org/en/master/) (2.20.0) - Used for running tests
-* [sqlalchemy](https://www.sqlalchemy.org) (1.1.14)
+* [sqlalchemy](https://www.sqlalchemy.org) (1.3.0)
 
 # Run Test Cases
 To execute all test cases, change directory to the project root folder and execute the following command:
