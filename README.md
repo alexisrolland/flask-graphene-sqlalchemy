@@ -1,5 +1,5 @@
 > Remark:
-> Although Graphene is pretty cool, do yourself a favor and check the following tutorial instead of this repository. It allows to you generate a feature complete GraphQL API from a PostgreSQL database... in minutes (almost). You'll thank me later: [Docker-PostgreSQL-PostGraphile](https://github.com/alexisrolland/docker-postgresql-postgraphile/wiki)
+> Although Graphene is pretty cool, do yourself a favor and check the following tutorial instead of this repository. It allows to generate a feature complete GraphQL API from a PostgreSQL database... in minutes (almost). You'll thank me later: [Docker-PostgreSQL-PostGraphile](https://github.com/alexisrolland/docker-postgresql-postgraphile/wiki)
 
 # Flask-Graphene-SQLAlchemy
 The purpose of this repository is to provide a project template to build a **GraphQL API in Python**. Its content has been largely inspired by the references below but code has been modified and enriched to provide a more complete API and a more scalable architecture.
